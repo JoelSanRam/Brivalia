@@ -1,0 +1,13 @@
+options all -indexes
+
+php_value upload_max_filesize 500M 
+php_value post_max_size 500M 
+php_value max_execution_time 200 
+php_value max_input_time 200 
+ErrorDocument 404 /proyecto/administrar/gui/404.php
+ErrorDocument 403 /proyecto/administrar/gui/403.php
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
